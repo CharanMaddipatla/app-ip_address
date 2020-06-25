@@ -38,7 +38,8 @@ function getFirstIpAddress(cidrStr, callback) {
     // Notice the destructering assignment syntax to get the value of the first array's element.
     [firstIpAddress] = cidr.toArray(options);
     Ipv4mappedStr = getIpv4MappedIpv6Address(firstIpAddress);
-    firstIpAddress = "ipv4 :"+ firstIpAddress +","+ "ipv6: " +Ipv4mappedStr;
+    firstIpAddress = {"ipv4" : firstIpAddress,"ipv6" : Ipv4mappedStr };
+    //"ipv4 :"+ firstIpAddress +","+ "ipv6: " +Ipv4mappedStr;
     //JsonIpAddress = JSON.parse(firstIpAddress);
   }
   // Call the passed callback function.
